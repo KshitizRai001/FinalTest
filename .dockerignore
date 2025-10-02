@@ -1,5 +1,6 @@
+
 node_modules
-dist
+# dist REMOVED so build output is included in deploy
 .git
 .gitignore
 README.md
