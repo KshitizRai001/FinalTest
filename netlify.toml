@@ -1,0 +1,24 @@
+[build]
+  command = "pnpm run build:client"
+  functions = "netlify/functions"
+  publish = "dist/spa"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_FLAGS = "--version"
+
+[functions]
+  external_node_modules = ["express", "@supabase/supabase-js"]
+  node_bundler = "esbuild"
+  
+[[redirects]]
+  force = true
+  from = "/api/*"
+  status = 200
+  to = "/.netlify/functions/api/:splat"
+
+# SPA routing - redirect all non-API routes to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
