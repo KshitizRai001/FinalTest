@@ -23,7 +23,7 @@ export default function DataFeeds() {
   useEffect(() => {
     const checkModelStatus = async () => {
       try {
-        const response = await fetch('/api/ml/models');
+  const response = await fetch('https://kmrlbackend-production.up.railway.app/api/ml/models');
         if (response.ok) {
           const data = await response.json();
           const activeModels = data.models?.filter((m: any) => m.is_active) || [];
@@ -40,7 +40,7 @@ export default function DataFeeds() {
   const trainAnomalyModel = async () => {
     try {
       setIsTrainingModel(true);
-      const response = await fetch('/api/ml/train', {
+  const response = await fetch('https://kmrlbackend-production.up.railway.app/api/ml/train', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

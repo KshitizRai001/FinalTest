@@ -8,10 +8,11 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
+  "noEmit": false,
+  "outDir": "dist",
+  "rootDir": ".",
     "jsx": "react-jsx",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -33,11 +34,8 @@
     }
   },
   "include": [
-    "client/**/*",
-    "backend/server/**/*",
-    "shared/**/*",
-    "vite.config.ts",
-    "vite.config.server.ts"
+    "server/**/*",
+    "shared/**/*"
   ],
   "exclude": ["node_modules", "dist"]
 }

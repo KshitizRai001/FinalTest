@@ -326,7 +326,7 @@ export default function Index() {
         });
       }, 1000);
 
-  const response = await fetch('/.netlify/functions/schedule-generate', {
+        const response = await fetch('https://kmrlbackend-production.up.railway.app/api/schedule/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -370,7 +370,7 @@ export default function Index() {
     setPlanningDate(today);
     
     // Try to load existing schedule for today
-    fetch(`/api/schedule/${today}`)
+  fetch(`https://kmrlbackend-production.up.railway.app/api/schedule/${today}`)
       .then(response => {
         if (response.ok) {
           return response.json();
