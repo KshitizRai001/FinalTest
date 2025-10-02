@@ -320,13 +320,15 @@ export default function Index() {
       
       // Simulate progress updates
       const progressInterval = setInterval(() => {
-        setGenerationProgress(prev => {
-          if (prev >= 90) return prev;
-          return prev + Math.random() * 15;
-        });
+
+      setGenerationProgress(prev => {
+        if (prev >= 90) return prev;
+        return prev + Math.random() * 15;
+      });
       }, 1000);
 
-        const response = await fetch('https://kmrlbackend-production.up.railway.app/api/schedule/generate', {
+      // Use Netlify Function endpoint
+      const response = await fetch('/api/generate-schedule', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
