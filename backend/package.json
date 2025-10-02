@@ -11,14 +11,8 @@
     ]
   },
   "scripts": {
-    "dev": "vite",
-    "build": "npm run build:client && npm run build:server",
-    "build:client": "vite build",
-    "build:server": "vite build --config vite.config.server.ts",
-    "start": "node dist/server/node-build.mjs",
-    "test": "vitest --run",
-    "format.fix": "prettier --write .",
-    "typecheck": "tsc"
+    "start": "ts-node server/index.ts",
+    "postinstall": "pip install -r advanced_model/requirements.txt"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.58.0",
