@@ -328,7 +328,7 @@ export default function Index() {
       }, 1000);
 
       // Use Netlify Function endpoint
-      const response = await fetch('/api/generate-schedule', {
+      const response = await fetch('https://kmrlbackend-production.up.railway.app/api/schedule/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
