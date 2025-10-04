@@ -1,0 +1,26 @@
+{
+  "name": "kmrl-metro-scheduling",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "client",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "pnpm --filter client dev",
+    "build": "pnpm --filter client build",
+    "start": "pnpm --filter backend start",
+    "build:backend": "pnpm --filter backend build",
+    "typecheck": "pnpm --filter client typecheck && pnpm --filter backend typecheck",
+    "test": "pnpm --filter client test",
+    "install:all": "pnpm install"
+  },
+  "devDependencies": {
+    "pnpm": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}
